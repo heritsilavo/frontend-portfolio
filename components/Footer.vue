@@ -1,4 +1,9 @@
-<script setup></script>
+<script setup>
+    const showSendMessage=useshowSendMessage()
+    function sendMessage() {
+        showSendMessage.value=true    
+    }
+</script>
 
 <template>
     <div class="col-12 d-flex flex-column align-items-center justify-content-between __footer_container__">
@@ -9,15 +14,14 @@
                 <NuxtLink external to="/#_sec4_"> <span class="p-2 __footer_menu_link__">Mes services</span> </NuxtLink>
             </div>
 
-            <div class="m-2 col-7 d-flex align-items-center justify-content-between">
+            <div class="m-2 col-11 col-md-7 d-flex align-items-center justify-content-between">
                 <div class="col-5 d-flex flex-column align-items-start justify-content-start">
                     <span> <span>Email :</span>     <span class="badge" >heritsilavo4835@gmail.com</span> </span>
                     <span> <span>Tél :</span>       <span class="badge" >+261342631778</span> </span>
                     <span> <span>Facebook :</span>  <span class="badge" >heritsilavo ANDRIANTSILAVINA</span> </span>
                 </div>
                 <div class="col-6 d-flex flex-column align-items-end justify-content-between">
-                    <textarea placeholder="M'envoyer un message" class="col-12 h-100" name="message" id="message"></textarea>
-                    <button class="btn btn-secondary mt-2"> envoi</button>
+                    <button @click="sendMessage" class="btn btn-secondary mt-2">M'envoyer un message !</button>
                 </div>
             </div>
         </div>
